@@ -2,7 +2,7 @@
 
 import "./browser";
 
-import { matchServerRequest } from "react-router";
+import { matchServerRequest } from "react-router/rsc";
 // @ts-expect-error
 import { renderToReadableStream } from "react-server-dom-parcel/server.edge";
 

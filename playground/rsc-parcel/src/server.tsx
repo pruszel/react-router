@@ -10,7 +10,7 @@ import { renderToReadableStream as renderHTMLToReadableStream } from "react-dom/
 	env: "react-client",
 };
 
-import { routeServerRequest, ServerStaticRouter,type ServerPayload } from "react-router" with {
+import { routeServerRequest, RSCStaticRouter,type ServerPayload } from "react-router" with {
 	env: "react-client",
 };
 
@@ -30,7 +30,7 @@ app.use(
 			createFromReadableStream,
 			async (payload) => {
 				return await renderHTMLToReadableStream(
-					<ServerStaticRouter payload={payload} />,
+					<RSCStaticRouter payload={payload} />,
 					{
 						bootstrapScriptContent: (
 							callServer as unknown as { bootstrapScript: string }

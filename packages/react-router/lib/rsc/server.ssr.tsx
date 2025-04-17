@@ -1,10 +1,10 @@
 import * as React from "react";
-import { type DataRouteObject } from "./context";
-import { FrameworkContext } from "./dom/ssr/components";
-import type { FrameworkContextObject } from "./dom/ssr/entry";
-import { createStaticRouter, StaticRouterProvider } from "./dom/server";
+import { type DataRouteObject } from "../context";
+import { FrameworkContext } from "../dom/ssr/components";
+import type { FrameworkContextObject } from "../dom/ssr/entry";
+import { createStaticRouter, StaticRouterProvider } from "../dom/server";
 import { injectRSCPayload } from "./html-stream/server";
-import type { ServerPayload } from "./server";
+import type { ServerPayload } from "./server.rsc";
 
 export async function routeServerRequest(
   request: Request,
@@ -84,7 +84,7 @@ export async function routeServerRequest(
   }
 }
 
-export function ServerStaticRouter({ payload }: { payload: ServerPayload }) {
+export function RSCStaticRouter({ payload }: { payload: ServerPayload }) {
   if (payload.type !== "render") return null;
 
   const context = {

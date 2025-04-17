@@ -16,5 +16,5 @@ export type {
   RenderedRoute as ServerRouteManifest,
   ServerRouteMatch,
   ServerRouteObject,
-} from "./lib/server";
-export { isReactServerRequest, matchServerRequest } from "./lib/server";
+} from "./lib/rsc/server.rsc";
+export { isReactServerRequest, matchServerRequest } from "./lib/rsc/server.rsc";
